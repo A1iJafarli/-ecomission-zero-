@@ -3,13 +3,6 @@ from datetime import datetime, timedelta
 import random
 import os 
 
-print("Mevcut dizin:", os.getcwd())
-print("Dizindeki dosyalar:", os.listdir())
-if os.path.exists('templates'):
-    print("Templates klasörü bulundu, içindekiler:", os.listdir('templates'))
-else:
-    print("HATA: templates klasörü ana dizinde bulunamadı!")
-
 app = Flask(__name__, 
             template_folder='templates',
             static_folder='static')
