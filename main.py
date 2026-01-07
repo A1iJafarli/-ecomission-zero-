@@ -3,10 +3,7 @@ from datetime import datetime, timedelta
 import random
 import os 
 
-app = Flask(__name__, 
-            template_folder='templates',
-            static_folder='static')
-
+app = Flask(__name__)
 
 state = {
     "puan": 0,
@@ -76,7 +73,7 @@ def tamamla(tur, miktar):
     simdi = datetime.now()
     if tur == "hizli":
         state["hizli_musait"] = False
-        state["hizli_yeni_zaman"] = simdi + timedelta(minutes=30)
+        state["hizli_yeni_zaman"] = simdi + timedelta(seconds=10)
     else:
         state["uzun_musait"] = False
         state["uzun_yeni_zaman"] = simdi + timedelta(days=1)
