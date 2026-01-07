@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoMission: Zero</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <div class="logo">EcoMission: Zero</div>
+        <div class="score-board">SKOR: <span>{{ p.puan }}</span> XP</div>
+
+        <div class="mission-container">
+            <div class="gorev-box quick {{ 'locked' if not p.hizli_musait }}">
+                {% if p.hizli_musait %}
+                    <div class="puan-badge">+{{ p.aktif_hizli.puan }} XP</div>
+                    <small>HIZLI GÖREV</small>
+                    <h4>{{ p.aktif_hizli.baslik }}</h4>
+                    <p>{{ p.aktif_hizli.gorev }}</p>
+                    <a href="/tamamla/hizli/{{ p.aktif_hizli.puan }}" class="done-link">TAMAMLADIM</a>
+                {% else %}
+                    <div class="lock-screen">
+                        <p>BEKLEMEDE...</p>
+                        <div class="timer">{{ ht }}</div>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="gorev-box long {{ 'locked' if not p.uzun_musait }}">
+                {% if p.uzun_musait %}
+                    <div class="puan-badge">+{{ p.aktif_uzun.puan }} XP</div>
+                    <small>STRATEJİK HEDEF</small>
+                    <h4>{{ p.aktif_uzun.baslik }}</h4>
+                    <p>{{ p.aktif_uzun.gorev }}</p>
+                    <a href="/tamamla/uzun/{{ p.aktif_uzun.puan }}" class="done-link">SÖZ VERİYORUM</a>
+                {% else %}
+                    <div class="lock-screen">
+                        <p>YENİ HEDEF HAZIRLANIYOR</p>
+                        <div class="timer">{{ ut }}</div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="test-bolumu">
+            <h3>🌍 Karbon Analizi</h3>
+            <form method="post">
+                <input type="number" name="km" placeholder="Günlük KM" required>
+                <select name="arac">
+                    <option value="benzin">Benzinli Araç</option>
+                    <option value="dizel">Dizel Araç</option>
+                    <option value="hibrit">Hibrit Araç</option>
+                    <option value="elektrik">Elektrikli Araç</option>
+                    <option value="toplu">Toplu Taşıma</option>
+                </select>
+                <button type="submit" class="calc-btn">ANALİZ ET</button>
+            </form>
+            {% if s %}
+            <div class="sonuc-box">
+                <p>Günlük: <strong>{{ s }}</strong></p>
+                <p class="tree-note">Telafi için yılda {{ a }} ağaç dikilmeli.</p>
+            </div>
+            {% endif %}
+            <p style="font-size: 0.7rem; color: #64748b; margin-top: 20px; font-style: italic;">
+                Bu proje, bireysel alışkanlıkları mikro görevlerle oyunlaştırarak küresel ısınmaya karşı bir dijital kalkan oluşturmayı amaçlar.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
