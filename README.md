@@ -1,41 +1,30 @@
-# 🚀 Mission: GreenCore 🌍
+🚀 Mission: GreenCore
 
-**Mission: GreenCore**, bireysel karbon ayak izini takip eden ve kullanıcıyı günlük sürdürülebilir görevlerle (operasyonlarla) doğayı korumaya teşvik eden bir **Gamified Eco-Tracking** uygulamasıdır.
+Mission: GreenCore, karbon ayak izini takip eden ve kullanıcıyı günlük "Yeşil Görevler" ile doğayı korumaya teşvik eden bir ekolojik takip uygulamasıdır.
+🌟 Özellikler
 
----
+    Karbon Hesaplayıcı: Araç tipi ve mesafeye göre anlık salınım analizi.
 
-## 🛠️ Özellikler
-- **Karbon Hesaplayıcı:** Araç tipi ve gidilen mesafeye göre anlık $CO_2$ salınımı hesaplama.
-- **Operasyon Merkezi (Gamification):** Kullanıcılara rastgele "Yeşil Görevler" atanır. Görev tamamlandığında XP kazanılır.
-- **Bekleme Süresi (Cooldown):** Gerçekçi bir oyun deneyimi için görevler arasında bekleme süresi bulunur.
-- **Dinamik Geri Bildirim:** Yıllık salınımı telafi etmek için kaç ağaç dikilmesi gerektiğini hesaplar.
-- **Modern Arayüz:** Karanlık tema (Dark Mode) ve neon detaylarla siber-operasyon estetiği.
+    Operasyon Merkezi: Rastgele görevler ve XP sistemi ile oyunlaştırılmış deneyim.
 
-## 💻 Kullanılan Teknolojiler
-- **Backend:** Python / Flask
-- **Frontend:** HTML5 / CSS3 (Modern UI/UX)
-- **Deployment:** Render
-- **Sürüm Kontrol:** Git & GitHub
+    Ağaç Karnesi: Salınımı telafi etmek için gereken yıllık ağaç sayısını hesaplar.
 
-## 📂 Proje Yapısı
-```text
-├── main.py              # Flask sunucusu ve oyun mantığı
-├── requirements.txt     # Gerekli kütüphaneler (Flask, Gunicorn)
-├── static/
-│   └── style.css        # Neon/Dark tema tasarımları
-└── templates/
-    └── index.html       # Ana arayüz ve Jinja2 şablonları
+    Cyber-Dark Tema: Modern ve göz yormayan kullanıcı arayüzü.
 
-🚀 Kurulum (Local)
+🛠️ Teknolojiler
 
-Projeyi kendi bilgisayarınızda çalıştırmak için:
+    Backend: Python / Flask
 
-    Depoyu klonlayın: git clone https://github.com/KULLANICI_ADIN/ecomission-zero.git
+    Frontend: HTML5 / CSS3
 
-    Klasöre girin: cd ecomission-zero
+    Sunucu: Render
 
-    Gerekli kütüphaneleri kurun: pip install -r requirements.txt
+📂 Dosya Yapısı
 
-    Uygulamayı başlatın: python main.py
+    main.py: Uygulama mantığı ve sunucu kodları.
 
-Bu proje, dünyamızı daha yaşanabilir kılmak için küçük adımların büyük farklar yaratacağına olan inançla geliştirilmiştir. 🌲
+    templates/: HTML arayüz dosyaları.
+
+    static/: Stil (CSS) dosyaları.
+
+    requirements.txt: Gerekli kütüphaneler listesi.
